@@ -1,0 +1,176 @@
+
+<html>
+<head>
+<link rel="stylesheet" type ="text/css" href="style-flight.css"/>
+<title>Hotel</title>
+<script language="JavaScript" type="text/JavaScript">
+var search_option=2;
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML ="The time in your region is: </br>"+
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+function search(){
+var search = document.getElementsByName('searchoption');
+var search_value;
+
+    if(search[0].checked){
+        search_value = search[0].value;
+		search_option=2;
+		//alert(search_value+search_option);
+		document.getElementById('message').innerHTML = 'Now searching for: Country';
+    }if(search[1].checked){
+        search_value = search[1].value;
+		search_option=1;
+		//alert(search_value+search_option);
+		document.getElementById('message').innerHTML = 'Now searching for: Hotel';
+    }//if(search[2].checked){
+       // search_value = search[2].value;
+		//search_option=3;
+		//alert(search_value+search_option);
+		//document.getElementById('message').innerHTML = 'Now searching for: Day of the tour';
+   // }
+
+}
+
+function filter() {
+  
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+ 
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[search_option];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter)> -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+
+</script>
+</head>
+<body onload="startTime()">
+<div>
+<div class="inline-block">
+<span style="text-align:center;"><img  src="img/banner3.jpg" width="92%" height="200"></span>
+<span style="float:right;font-size:11px"><img src="img/phoneicon.png" width="20" height="20">Contact Us:</br>Tel:9876 5432</br>Email:<a href="mailto:rtcoffical@gmail.com" style="color:#00ace6" target="_top">Click here</a></br><img src="img/cs.jpg" width="135" height="110"></br>
+<img src="img/infoicon.png" width="20" height="20"><a href="" style="color: #00ace6">Travel Guide</a></br></span>
+</div><ul>
+  <li><a class="highlight" href="index.html">Home</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Tours</a>
+    <div class="dropdown-content">
+      <a href="tour.html">Tours</a>
+      <a href="https://www.facebook.com/Reliable-Travel-Company-Limited-1885194441525460/?modal=admin_todo_tour" target="_blank">Guest Book</a>
+    </div> 
+ </li>
+  <li><a href="flight.html">Flights</a></li>
+  <li><a href="hotel.html">Hotel</a></li>
+  <li><a href="package.html">Packages</a></li>
+  <li><a href="localtour.html">Local Tours</a></li>
+   <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Other Services</a>
+    <div class="dropdown-content">
+      <a href="#">Services 1</a>
+      <a href="#">Services 2</a>
+      <a href="#">Services 3</a>
+    </div> 
+ </li>
+  <li><a href="4x4.html">Game</a></li>
+ <li style="float:right"><a class="highlight" href="loginToFounder.html">About us</a></li>
+</ul>
+</div>
+<div style="font-size:30px; text-align:center" id="txt"></div>
+<a href src="index.html">Home</a>>Hotel Detail</br></br>
+Search by: <input type="radio" name="searchoption" value="Country" onclick="search()" checked>Country
+</br><br>
+<div id="message" class="message">Now searching by: Country</div><br>
+<input type="text" id="myInput" onkeyup="filter()" placeholder="Search......">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:40%;">Tour</th>
+    <th>Outbound Flight</th>
+	<th >Country</th>
+	<th>Return Flight</th>
+	<th>Price(Outbound Flight)</th>
+  </tr>
+  <tr>
+	<td>Hong Kong to Nagoya</td>
+    <td>Departure Date: 18/4/2018 </td>
+	<td>Japan<img src="img/japan.jpg" width="30" height="20"></td>
+	<td>Return Date: 22/4/2018</td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>2100</span></b><i/></td>
+  </tr>
+  <tr>
+
+	<td>Hong Kong to Tokyo</td>
+    <td>Departure Date: 19/4/2018 </td> 
+	<td>Japan<img src="img/japan.jpg" width="30" height="20"></td>
+	<td>Return Date: 24/4/2018</td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>2030</span></b><i/></td>
+  </tr>
+  <tr>
+    <td>Hong Kong to Seoul</td>
+    <td>Departure Date: 21/4/2018</td>
+	<td>Korea<img src="img/korea.jpg" width="30" height="20"></td>
+	<td>Return Date: 26/4/2018</td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>1940</span></b><i/></td>
+  </tr>
+  <tr>
+	
+    <td>Hing Kong to Beijing</td>
+    <td>Departure Date: 23/4/2018</td>
+	<td>China<img src="img/china.png" width="30" height="20"></td>
+	<td>Return Date: 27/4/2018</td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>1100</span></b><i/></td>
+  </tr>
+    <tr>
+    <td>Hong Kong to Seoul</td>
+    <td>Departure Date: 23/4/2018</td>
+	<td>Korea<img src="img/korea.jpg" width="30" height="20"></td>
+	<td>Return Date: 28/4/2018</td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>2000</span></b><i/></td>
+  </tr>
+  <tr>
+	<td>Hong Kong to Chongqing</td>
+    <td>Departure Date: 24/4/2018 </td>
+	<td>China<img src="img/china.png" width="30" height="20"></td>
+	<td>Return Date: 29/4/2018</td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>1030</span></b><i/></td>
+  </tr>
+   <tr>
+
+	<td>Hong Kong to Tokyo</td>
+    <td>Departure Date: 25/4/2018 </td> 
+	<td>Japan<img src="img/japan.jpg" width="30" height="20"></td>
+	<td>Return Date: 1/5/2018</td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>2100</span></b><i/></td>
+  </tr>
+  <tr>
+	<td>Hong Kong to Hokkaido</td>
+    <td>Departure Date: 25/4/2018 </td>
+	<td>Japan<img src="img/japan.jpg" width="30" height="20"></td>
+	<td>Return Date: 30/4/2018</td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>1980</span></b><i/></td>
+  </tr>
+</table>
+</body>
+</html>

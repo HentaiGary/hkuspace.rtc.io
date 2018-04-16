@@ -1,0 +1,86 @@
+<html>
+<head>
+<link rel="stylesheet" type ="text/css" href="style-tour.css"/>
+<title>Speacial Services 2</title>
+<script language="JavaScript" type="text/JavaScript">
+var search_option=2;
+
+function search(){
+var search = document.getElementsByName('searchoption');
+var search_value;
+
+    if(search[0].checked){
+        search_value = search[0].value;
+		search_option=2;
+		//alert(search_value+search_option);
+		document.getElementById('message').innerHTML = 'Now searching for: Country';
+    }if(search[1].checked){
+        search_value = search[1].value;
+		search_option=1;
+		//alert(search_value+search_option);
+		document.getElementById('message').innerHTML = 'Now searching for: Attractions';
+    }//if(search[2].checked){
+       // search_value = search[2].value;
+		//search_option=3;
+		//alert(search_value+search_option);
+		//document.getElementById('message').innerHTML = 'Now searching for: Day of the tour';
+   // }
+
+}
+
+function filter() {
+  
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+ 
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[search_option];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter)> -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+</script>
+</head>
+<body>
+<div>
+<div class="inline-block">
+<span style="text-align:center;"><img  src="img/banner3.jpg" width="92%" height="200"></span>
+<span style="float:right;font-size:11px"><img src="img/phoneicon.png" width="20" height="20">Contact Us:</br>Tel:9876 5432</br>Email:<a href="mailto:rtcoffical@gmail.com" style="color:#00ace6" target="_top">Click here</a></br><img src="img/cs.jpg" width="135" height="110"></br>
+<img src="img/infoicon.png" width="20" height="20"><a href="" style="color: #00ace6">Travel Guide</a></br></span>
+</div><ul>
+  <li><a class="highlight" href="index.html">Home</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Tours</a>
+    <div class="dropdown-content">
+      <a href="tour.html">Tours</a>
+      <a href="https://www.facebook.com/Reliable-Travel-Company-Limited-1885194441525460/?modal=admin_todo_tour" target="_blank">Guest Book</a>
+    </div> 
+ </li>
+  <li><a href="#flights">Flights</a></li>
+  <li><a href="hotel.html">Hotel</a></li>
+  <li><a href="package.html">Packages</a></li>
+  <li><a href="#local_tours">Local Tours</a></li>
+   <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Other Services</a>
+    <div class="dropdown-content">
+      <a href="#">Services 1</a>
+      <a href="#">Services 2</a>
+      <a href="#">Services 3</a>
+    </div> 
+ </li>
+  <li><a href="4x4.html">Game</a></li>
+ <li style="float:right"><a class="highlight" href="#about">About us</a></li>
+</ul>
+</div>
+<a href src="index.html">Home</a>>Tour</br></br>
+
+<img style="position:absolute; left:40%; right:50%" src="img/sorry.jpg" alt="sorry" height:"500" width"500">

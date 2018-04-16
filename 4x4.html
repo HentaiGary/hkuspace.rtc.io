@@ -1,0 +1,148 @@
+<HTML>
+	<HEAD>
+		<TITLE>Memory Game</TITLE>
+		<link rel="stylesheet" type="text/css" href="game.css">
+		<SCRIPT LANGUAGE="JavaScript">
+		var map=new Array(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8);
+		var user = new Array();
+		var temparray = new Array();
+		var clickarray = new Array(0, 0);
+		var ticker, sec, min, ctr, id, oktoclick, finished;
+		var winSound = new Audio();
+		winSound.src= "sound/win.wav";
+
+		function init() {
+			clearTimeout(id);
+			for (i = 0; i <= 16 ;i++) { user[i] = 0; }
+			ctr = 0;
+			oktoclick = true;
+			finished = 0;
+			document.f.b.value = "Start";
+			scramble();
+			for (i = 0; i <16; i++) { document.f[("img"+i)].src = "images/cover.jpg"; }
+		}
+		function scramble() { //scramble the card
+			for (z = 0; z < 5; z++) {
+				for (x = 0; x < 15; x++) {
+					temparray[0] = Math.floor(Math.random()*16);
+					temparray[1] = map[temparray[0]];
+					temparray[2] = map[x];
+					map[x] = temparray[1];
+					map[temparray[0]] = temparray[2];
+				}
+			}
+		}
+		function showimage(but) {
+			if (oktoclick) {
+				oktoclick = false; 
+				document.f[('img'+but)].src = 'images/'+map[but]+'.png';
+				if (ctr == 0) {
+					ctr++;
+					clickarray[0] = but;
+					oktoclick = true;
+				} else {
+					clickarray[1] = but;
+					ctr = 0;
+					setTimeout('returntoold()', 600);
+				}
+			}
+		}
+		function returntoold() {
+			if ((clickarray[0] == clickarray[1]) && (!user[clickarray[0]])) {
+				document.f[('img'+clickarray[0])].src = "images/cover.jpg";
+				oktoclick = true;
+			} else {
+				if (map[clickarray[0]] != map[clickarray[1]]) {
+					if (user[clickarray[0]] == 0) { document.f[('img'+clickarray[0])].src = "images/cover.jpg"; }
+						if (user[clickarray[1]] == 0) { document.f[('img'+clickarray[1])].src = "images/cover.jpg"; }
+				}
+				if (map[clickarray[0]] == map[clickarray[1]]) {
+					if (user[clickarray[0]] == 0&&user[clickarray[1]] == 0) { finished++; }
+						user[clickarray[0]] = 1;
+						user[clickarray[1]] = 1;
+				}
+				if (finished >= 8) {
+					winSound.play();
+					winSound.onended = function() {
+						alert("You finish!");
+					}
+					init();
+				} else { oktoclick = true; }
+			}
+		}
+		function display() {
+			if (oktoclick) {
+				clearTimeout(id);
+				oktoclick = true;
+				document.f.b.value = "Start";
+				document.f.bb.value = "Show answer";
+				for (dp=0; dp<16; dp++) {
+					document.f[('img'+dp)].src = 'images/'+map[dp]+'.png';
+				}
+			}
+		}
+		</script>
+	</HEAD>
+<BODY>
+<div>
+<div class="inline-block">
+<span style="text-align:center;"><img  src="img/banner3.jpg" width="92%" height="200"></span>
+<span style="float:right;font-size:11px"><img src="img/phoneicon.png" width="20" height="20">Contact Us:</br>Tel:9876 5432</br>Email:<a href="mailto:rtcoffical@gmail.com" style="color:#00ace6" target="_top">Click here</a></br><img src="img/cs.jpg" width="135" height="110"></br>
+<img src="img/infoicon.png" width="20" height="20"><a href="" style="color: #00ace6">Travel Guide</a></br></span>
+</div><ul>
+  <li><a class="highlight" href="index.html">Home</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Tours</a>
+    <div class="dropdown-content">
+      <a href="tour.html">Tours</a>
+      <a href="https://www.facebook.com/Reliable-Travel-Company-Limited-1885194441525460/?modal=admin_todo_tour" target="_blank">Guest Book</a>
+    </div> 
+ </li>
+  <li><a href="flight.html">Flights</a></li>
+  <li><a href="hotel.html">Hotel</a></li>
+  <li><a href="package.html">Packages</a></li>
+  <li><a href="localtour.html">Local Tours</a></li>
+   <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Other Services</a>
+    <div class="dropdown-content">
+      <a href="#">Services 1</a>
+      <a href="#">Services 2</a>
+      <a href="#">Services 3</a>
+    </div> 
+ </li>
+  <li><a href="4x4.html">Game</a></li>
+ <li style="float:right"><a class="highlight" href="loginToFounder.html">About us</a></li>
+</ul>
+</div>
+</br>
+<CENTER>		
+			<TABLE class="header">
+				<TH>Memory game</TH>
+			</TABLE><BR>
+			<form name="f"> 
+				<input type="button" value="4*4" onClick="window.location='4x4.html';">
+				<input type="button" value="4*6" onClick="window.location='4x6.html';">
+				<input type="button" value="4*8" onClick="window.location='4x8.html';">
+			<br/>
+			<br/>
+				<table class="gameboard">
+				<script language="javascript">
+					for (r = 0; r <= 3; r++) {
+						document.write('<tr>');
+						for (c = 0; c <= 3; c++) {
+							document.write('<td align="center">');
+							document.write('<a href="javascript:showimage('+((4*r)+c)+')" onClick="document.f.b.focus()">');
+							document.write('<img src="images/cover.jpg" name="img'+((4*r)+c)+'" border="0">');
+							document.write('</a></td>');
+						}
+						document.write('</tr>');
+					}
+				</script>
+				</table>
+			<br/>
+				<input type="button" value="Start" name="b" onClick="init();">
+				<input type="button" value="Show answer" name="bb" onClick="display();">
+			</form>
+</CENTER>
+</BODY>
+</HTML>

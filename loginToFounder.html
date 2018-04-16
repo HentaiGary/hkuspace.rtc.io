@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<title>About us</title>
+		<link rel="stylesheet" type ="text/css" href="style-aboutUs.css"/>
+	</head>
+	<body>
+		<div>
+			<div class="inline-block">
+				<span style="text-align:center;"><img src="img/banner3.jpg" width="92%" height="200"></span>
+				<span style="float:right;font-size:11px"><img src="img/phoneicon.png" width="20" height="20">Contact Us:</br>Tel:9876 5432</br>Email:<a href="mailto:rtcoffical@gmail.com" style="color:#00ace6" target="_top">Click here</a></br><img src="img/cs.jpg" width="135" height="110"></br>
+				<img src="img/infoicon.png" width="20" height="20"><a href="" style="color: #00ace6">Travel Guide</a></br></span>
+			</div>
+			<ul>
+				<li><a class="highlight" href="index.html">Home</a></li>
+				<li class="dropdown">
+				<a href="javascript:void(0)" class="dropbtn">Tours</a>
+				<div class="dropdown-content">
+					<a href="tour.html">Tours</a>
+					<a href="https://www.facebook.com/Reliable-Travel-Company-Limited-1885194441525460/?modal=admin_todo_tour" target="_blank">Guest Book</a>
+				</div></li>
+				<li><a href="flight.html">Flights</a></li>
+				<li><a href="hotel.html">Hotel</a></li>
+				<li><a href="package.html">Packages</a></li>
+				<li><a href="localtour.html">Local Tours</a></li>
+				<li class="dropdown">
+					<a href="javascript:void(0)" class="dropbtn">Other Services</a>
+					<div class="dropdown-content">
+						<a href="#">Services 1</a>
+						<a href="#">Services 2</a>
+						<a href="#">Services 3</a>
+					</div> 
+				</li>
+				<li><a href="4x4.html">Game</a></li>
+				<li style="float:right"><a class="highlight" href="loginToFounder.html">About us</a></li>
+			</ul>
+		</div>
+		<script language="javascript">
+			var user =["Javascript","gary","alex","paul"] ;
+			var pw = ["Javascript","123456","2018","1998"];
+			function check(form){
+				var valid = false;
+				for(var i=0;i<user.length;i++){
+					if(form.userid.value == user[i] && form.pswrd.value == pw[i]){
+						alert("Welcome!")
+						location.replace('founder.html');
+						valid=true;
+						/*opens the target page while Id & password matches*/
+					}
+				}
+				if(!valid){
+						alert("Worng Password or Username")/*displays error message*/
+						form.reset();
+					}
+			}
+		</script>
+		<center>
+			<img src="img\login-user-icon.png" width="100" height="100">
+			<table>
+				<form name="login">
+				<tr>
+					<td>Username</td>
+					<td><input type="text" name="userid"/></td>
+					<td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="pswrd"/></td>
+					<td>
+				</tr>
+				<tr>
+					<td>
+					<td><input type="button" onclick="check(login)" value="Login"/>
+						<input type="reset" value="Cancel"/></td>
+					<td></td>
+				</tr>
+				</form>
+			</table>
+		</center>
+	</body>
+</html>

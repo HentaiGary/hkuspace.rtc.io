@@ -1,0 +1,130 @@
+<html>
+<head>
+<link rel="stylesheet" type ="text/css" href="style-tour.css"/>
+<title>Local Tours</title>
+<script language="JavaScript" type="text/JavaScript">
+var search_option=2;
+
+function search(){
+var search = document.getElementsByName('searchoption');
+var search_value;
+
+    if(search[0].checked){
+        search_value = search[0].value;
+		search_option=2;
+		//alert(search_value+search_option);
+		document.getElementById('message').innerHTML = 'Now searching for: Country';
+    }if(search[1].checked){
+        search_value = search[1].value;
+		search_option=1;
+		//alert(search_value+search_option);
+		document.getElementById('message').innerHTML = 'Now searching for: Attractions';
+    }//if(search[2].checked){
+       // search_value = search[2].value;
+		//search_option=3;
+		//alert(search_value+search_option);
+		//document.getElementById('message').innerHTML = 'Now searching for: Day of the tour';
+   // }
+
+}
+
+function filter() {
+  
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+ 
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[search_option];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter)> -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+</script>
+</head>
+<body>
+<div>
+<div class="inline-block">
+<span style="text-align:center;"><img  src="img/banner3.jpg" width="92%" height="200"></span>
+<span style="float:right;font-size:11px"><img src="img/phoneicon.png" width="20" height="20">Contact Us:</br>Tel:9876 5432</br>Email:<a href="mailto:rtcoffical@gmail.com" style="color:#00ace6" target="_top">Click here</a></br><img src="img/cs.jpg" width="135" height="110"></br>
+<img src="img/infoicon.png" width="20" height="20"><a href="" style="color: #00ace6">Travel Guide</a></br></span>
+</div><ul>
+  <li><a class="highlight" href="index.html">Home</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Tours</a>
+    <div class="dropdown-content">
+      <a href="tour.html">Tours</a>
+      <a href="https://www.facebook.com/Reliable-Travel-Company-Limited-1885194441525460/?modal=admin_todo_tour" target="_blank">Guest Book</a>
+    </div> 
+ </li>
+  <li><a href="flight.html">Flights</a></li>
+  <li><a href="hotel.html">Hotel</a></li>
+  <li><a href="package.html">Packages</a></li>
+  <li><a href="localtour.html">Local Tours</a></li>
+   <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Other Services</a>
+    <div class="dropdown-content">
+      <a href="#">Services 1</a>
+      <a href="#">Services 2</a>
+      <a href="#">Services 3</a>
+    </div> 
+ </li>
+  <li><a href="4x4.html">Game</a></li>
+ <li style="float:right"><a class="highlight" href="loginToFounder.html">About us</a></li>
+</ul>
+</div>
+<a href src="index.html">Home</a>>Tour</br></br>
+Search by: <input type="radio" name="searchoption" value="Country" onclick="search()" checked>Country
+<input type="radio" name="searchoption" value="Attractions" onclick="search()">Attractions
+</br><br>
+<div id="message" class="message">Now searching for: Country</div><br>
+<input type="text" id="myInput" onkeyup="filter()" placeholder="Search......">
+
+<table id="myTable">
+  <tr class="header">
+    <th>Gallery</th>
+    <th style="width:40%;">Tour</th>
+    <th >Country</th>
+	<th>Day of the tour</th>
+	<th>Price</th>
+  </tr>
+  <tr>
+    <td><img src="img/cheungchau.jpg" width="400" height="250"></td>
+	<td>Cheung Chau</br>Attractions:Cheung Chau Sai Tai Road, Cheung Po Tsai Cave, Kwan Kung Pavilion</td>
+    <td>Hong Kong <img src="img/hongkong.jpg" width="30" height="20"></td>
+	<td>1 day tour<br>Date: 1/7/2018 - 2/7/2018</td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>1000</span></b><i/></td>
+  </tr>
+  <tr>
+    <td><img src="img/labtau.jpg" width="400" height="250"></td>
+	<td>Lantau Island</br>Attractions:The Big Buddha and Po Lin Monastery, Ngong Ping 360, Ngong Ping Piazza</td>
+    <td>Hong Kong <img src="img/hongkong.jpg" width="30" height="20"></td>
+	<td>1 day tour<br>Date: 7/7/2018 - 8/7/2018 </td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>1000</span></b><i/></td>
+  </tr>
+  <tr>
+  <td><img src="img/Lamma.jpg" width="400" height="250"></td>
+    <td>Lamma Island</br>Attractions:Hung Shing Yeh Beach, Kamikaze Cave, Lamma Fisherfolk's Village, Lamma Winds, Ling Kok Shan Hiking Trail, Tin Hau Temple at Yung Shue Wan</td>
+    <td>Hong Kong <img src="img/hongkong.jpg" width="30" height="20"></td>
+	<td>2 day tour<br>Date: 10/8/2018 - 12/8/2018</td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>2000</span></b><i/></td>
+  </tr>
+  <tr>
+  <td><img src="img/hongkongcity.jpg" width="400" height="250"></td>
+    <td>Hong Kong City</br>Attractions: Hong Kong, Kowloon, New Territories</td>
+    <td>Hong Kong <img src="img/hongkong.jpg" width="30" height="20"></td>
+	<td>2 day tour<br>Date: 20/9/2018 - 22/9/2018</td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>2000</span></b><i/></td>
+  </tr>
+</table>
+
+</body>
+</html>

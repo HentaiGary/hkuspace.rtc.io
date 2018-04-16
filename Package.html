@@ -1,0 +1,475 @@
+<html>
+<head>
+<link rel="stylesheet" type ="text/css" href="style-package.css"/>
+<title>Package</title>
+<script language="JavaScript" type="text/JavaScript">
+var search_option=2;
+
+function search(){
+var search = document.getElementsByName('searchoption');
+var search_value;
+
+    if(search[0].checked){
+        search_value = search[0].value;
+		search_option=2;
+		//alert(search_value+search_option);
+		document.getElementById('message').innerHTML = 'Now searching for: Country';
+    }if(search[1].checked){
+        search_value = search[1].value;
+		search_option=1;
+		//alert(search_value+search_option);
+		document.getElementById('message').innerHTML = 'Now searching for: Content';
+    }//if(search[2].checked){
+       // search_value = search[2].value;
+		//search_option=3;
+		//alert(search_value+search_option);
+		//document.getElementById('message').innerHTML = 'Now searching for: Day of the tour';
+   // }
+
+}
+
+function filter() {
+  
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+    table = document.getElementById("T1");
+  tr = table.getElementsByTagName("tr");
+
+ 
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[search_option];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter)> -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+
+   table = document.getElementById("T2");
+  tr = table.getElementsByTagName("tr");
+
+ 
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[search_option];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter)> -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+   table = document.getElementById("T3");
+  tr = table.getElementsByTagName("tr");
+
+ 
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[search_option];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter)> -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+   table = document.getElementById("T4");
+  tr = table.getElementsByTagName("tr");
+
+ 
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[search_option];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter)> -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+
+
+
+
+
+}
+function All() {
+    var x = document.getElementById("T1");
+    var y = document.getElementById("T2");
+    var z = document.getElementById("T3");
+    var c = document.getElementById("T4");
+        x.style.display = "block";
+        y.style.display = "block";
+        z.style.display = "block";
+        c.style.display = "block";
+    }
+function T1() {
+    var x = document.getElementById("T1");
+    var y = document.getElementById("T2");
+    var z = document.getElementById("T3");
+    var c = document.getElementById("T4");
+
+
+        x.style.display = "block";
+        y.style.display = "none";
+        z.style.display = "none";
+        c.style.display = "none";
+    }
+function T2() {
+    var x = document.getElementById("T1");
+    var y = document.getElementById("T2");
+    var z = document.getElementById("T3");
+    var c = document.getElementById("T4");
+        x.style.display = "none";
+        y.style.display = "block";
+        z.style.display = "none";
+        c.style.display = "none";
+    }
+
+ function T3() {
+    var x = document.getElementById("T1");
+    var y = document.getElementById("T2");
+    var z = document.getElementById("T3");
+    var c = document.getElementById("T4");
+
+        x.style.display = "none";
+        y.style.display = "none";
+        z.style.display = "block";
+        c.style.display = "none";
+    }
+
+ function T4() {
+    var x = document.getElementById("T1");
+    var y = document.getElementById("T2");
+    var z = document.getElementById("T3");
+    var c = document.getElementById("T4");
+
+        x.style.display = "none";
+        y.style.display = "none";
+        z.style.display = "none";
+        c.style.display = "block";
+    }
+
+
+
+
+</script>
+</head>
+<body>
+<div>
+<div class="inline-block">
+<span style="text-align:center;"><img  src="img/banner3.jpg" width="92%" height="200"></span>
+<span style="float:right;font-size:11px"><img src="img/phoneicon.png" width="20" height="20">Contact Us:</br>Tel:9876 5432</br>Email:<a href="mailto:rtcoffical@gmail.com" style="color:#00ace6" target="_top">Click here</a></br><img src="img/cs.jpg" width="135" height="110"></br>
+<img src="img/infoicon.png" width="20" height="20"><a href="" style="color: #00ace6">Travel Guide</a></br></span>
+</div><ul class="c">
+  <li class="c"><a class="highlight" href="index.html">Home</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Tours</a>
+    <div class="dropdown-content">
+      <a href="tour.html">Tours</a>
+      <a href="https://www.facebook.com/Reliable-Travel-Company-Limited-1885194441525460/?modal=admin_todo_tour" target="_blank">Guest Book</a>
+    </div> 
+ </li>
+  <li class="c"><a href="flight.html">Flights</a></li>
+  <li class="c"><a href="hotel.html">Hotel</a></li>
+  <li class="c"><a href="package.html">Packages</a></li>
+  <li class="c"><a href="localtour.html">Local Tours</a></li>
+   <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Other Services</a>
+    <div class="dropdown-content">
+      <a href="#">Services 1</a>
+      <a href="#">Services 2</a>
+      <a href="#">Services 3</a>
+    </div> 
+ </li>
+  <li class="c"><a href="4x4.html">Game</a></li>
+ <li style="float:right"><a class="highlight" href="loginToFounder.html">About us</a></li>
+</ul>
+</div>
+<a href src="index.html">Home</a>>Package</br></br>
+Search by: <input type="radio" name="searchoption" value="Country" onclick="search()" checked>Country
+<input type="radio" name="searchoption" value="Attractions" onclick="search()">Content
+</br><br>
+<div id="message" class="message">Now searching for: Country</div><br>
+<input type="text" id="myInput" onkeyup="filter()" placeholder="Search......">
+
+<button onclick="All()">All</button>  <button onclick="T1()">Tokyo</button> <button onclick="T2()">Seoul</button> <button onclick="T3()">Osaka</button> <button onclick="T4()">Taipei</button>
+
+<div id="T1">
+<table id="myTable">
+  <tr class="header">
+    <th>Gallery</th>
+    <th style="width:40%;">Packge</th>
+    <th >Country</th>
+	<th>Day</th>
+	<th>Price</th>
+  </tr>
+  <tr>
+    <td><img src="img/pa01.jpg" width="400" height="250"></td>
+	<td>Tokyo Disneyland</br>content:</br> 
+            <ul> 
+              <li>Hong Kong to Tokyo round-trip ticket (economical seat) [Narita Airport] or [Haneda Airport]  </li>
+              <li>2 consecutive nights hotel </li>
+              <li>Tokyo Disney Resort One-Day Passport - Electronic Ticket (Free access once)</li>
+              <li>Free Japan-wide ticket package, including free pocket wifi rental service, unlimited data for the whole process (one for each order) </li>
+          </ul>
+    </td>
+    <td>Tokyo, Japan <img src="img/japan.jpg" width="30" height="20"></td>
+	<td>6 day tour<br>Date: 1/7/2018 - 6/7/2018</td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>3281</span></b><i/></td>
+  </tr>
+  <tr>
+    <td><img src="img/pa02.jpg" width="400" height="250"></td>
+	<td>Tokyo's One Piece Tower</br>content:</br> 
+            <ul> 
+              <li>Hong Kong to Tokyo round-trip ticket (economical seat) [Narita Airport] or [Haneda Airport]  </li>
+              <li>2 consecutive nights hotel </li>
+              <li>Tokyo's One Piece Tower LIVE & PARK PASS (LIVE time - Japan time: 14:00)</li>
+              <li>Free Japan-wide ticket package, including free pocket wifi rental service, unlimited data for the whole process (one for each order) </li>
+             </ul>
+            </td>
+
+    <td>Tokyo, Japan <img src="img/Japan.jpg" width="30" height="20"></td>
+	<td>3 day tour<br></td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>2902</span></b><i/></td>
+  </tr>
+  <tr>
+  <td><img src="img/pa03.jpg" width="400" height="250"></td>
+    <td>One-way Narita Airport bus ticket</br>content:<ul> 
+              <li>Hong Kong to Tokyo round-trip ticket (economical seat) [Narita Airport] or [Haneda Airport]  </li>
+              <li>2 consecutive nights hotel </li>
+              <li>One-way Narita Airport to Shinjuku or Shinjuku to Narita Airport Limousin Buses</li>
+              <li>Free Japan-wide ticket package, including free pocket wifi rental service, unlimited data for the whole process (one for each order) </li>
+          </ul>
+    </td>
+
+    <td>Tokyo, Japan <img src="img/japan.jpg" width="30" height="20"></td>
+	<td>7 day tour<br>Date: 10/8/2018 - 17/8/2018</td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>2909</span></b><i/></td>
+  </tr>
+  <tr>
+  <td><img src="img/pa04.jpg" width="400" height="250"></td>
+    <td>Tokyo Bay Cruise and Dinner</br>content:<ul> 
+              <li>Hong Kong to Tokyo round-trip ticket (economical seat) [Narita Airport] or [Haneda Airport]  </li>
+              <li>2 consecutive nights hotel </li>
+              <li>Tokyo Bay Dinner Cruise</li>
+              <li>Free Japan-wide ticket package, including free pocket wifi rental service, unlimited data for the whole process (one for each order) </li>
+          </ul>
+    </td>
+
+    <td>Tokyo, Japan <img src="img/Japan.jpg" width="30" height="20"></td>
+	<td>4 day tour<br>Date: 20/9/2018 - 24/9/2018</td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>3271</span></b><i/></td>
+  </tr>
+</table>
+</div>
+
+
+<div id="T2">
+<table id="myTable">
+  <tr class="header">
+    <th>Gallery</th>
+    <th style="width:40%;">Packge</th>
+    <th >Country</th>
+  <th>Day</th>
+  <th>Price</th>
+  </tr>
+  <tr>
+    <td><img src="img/pa11.jpg" width="400" height="250"></td>
+  <td>Seoul Freedom Package 5 days</br>content:</br> 
+            <ul> 
+              <li>Round-trip ticket from Hong Kong to Seoul (economic class) </li>
+              <li>4 consecutive nights in the hotel </li>
+            </ul>
+    </td>
+    <td>Seoul, Korea <img src="img/korea.jpg" width="30" height="20"></td>
+  <td>6 day tour<br>Date: 1/7/2018 - 6/7/2018</td>
+  <td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>2290</span></b><i/></td>
+  </tr>
+  <tr>
+    <td><img src="img/pa12.jpg" width="400" height="250"></td>
+  <td>Gyeonggi-do, Everland</br>content:</br> 
+            <ul> 
+              <li>Round-trip ticket from Hong Kong to Seoul (economic class)  </li>
+              <li>2 consecutive nights hotel </li>
+              <li>Everland One Day Ticket</li>
+             </ul>
+              
+            </td>
+
+    <td>Seoul, Korea <img src="img/korea.jpg" width="30" height="20"></td>
+  <td>3 day tour<br></td>
+  <td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>1382</span></b><i/></td>
+  </tr>
+  <tr>
+  <td><img src="img/pa13.jpg" width="400" height="250"></td>
+    <td>Jiangcun Railway Bicycle + Chuncheon Sky Walk + Nami Island</br>content:<ul> 
+              <li>Round-trip ticket from Hong Kong to Seoul (economic class) </li>
+              <li>2 night hotel accommodation </li>
+              <li>Jiangcun Railway Bicycle+Korean Romantic City Chuncheon Skywalk+Nami Island+Recommended Dining Restaurant One-day Reunion</li>
+             
+    </td>
+
+    <td>Seoul, Korea <img src="img/korea.jpg" width="30" height="20"></td>
+  <td>7 day tour<br>Date: 10/8/2018 - 17/8/2018</td>
+  <td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>2002</span></b><i/></td>
+  </tr>
+  <tr>
+  <td><img src="img/pa14.jpg" width="400" height="250"></td>
+    <td>N Seoul Tower Observatory Tickets</br>content:<ul> 
+              <li>Round-trip ticket between Hong Kong and Seoul (economic class) </li>
+              <li>2 night hotel accommodation</li>
+              <li>N Seoul Tower Observatory entrance ticket (without cable car)</li>
+    </td>
+
+    <td>Seoul, Korea <img src="img/korea.jpg" width="30" height="20"></td>
+  <td>4 day tour<br>Date: 20/9/2018 - 24/9/2018</td>
+  <td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>1173</span></b><i/></td>
+  </tr>
+</table>
+</div>
+
+<div id="T3">
+<table id="myTable">
+  <tr class="header">
+    <th>Gallery</th>
+    <th style="width:40%;">Packge</th>
+    <th >Country</th>
+	<th>Day</th>
+	<th>Price</th>
+  </tr>
+  <tr>
+    <td><img src="img/pa21.jpg" width="400" height="250"></td>
+	<td>The Bridge Hotel Shinsaibashi </br>content:</br> 
+            <ul> 
+              <li>Round trip ticket from Hong Kong to Osaka (economic class) </li>
+              <li>4 consecutive nights hotel</li>
+              <li>Tokyo Disney Resort One-Day Passport - Electronic Ticket (Free access once)</li>
+              <li>Free Japan-wide ticket package, including free pocket wifi rental service, unlimited data for the whole process (one for each order) </li>
+          </ul>
+    </td>
+    <td>Osaka, Japan <img src="img/japan.jpg" width="30" height="20"></td>
+	<td>6 day tour<br>Date: 1/7/2018 - 6/7/2018</td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>3850</span></b><i/></td>
+  </tr>
+  <tr>
+    <td><img src="img/pa22.png" width="400" height="250"></td>
+	<td>Air India │ bag pocket wifi rental service │ Osaka free trip package 6 days</br>content:</br> 
+            <ul> 
+              <li>Hong Kong to Tokyo round-trip ticket (economical seat) [Narita Airport] or [Haneda Airport]  </li>
+              <li>5 consecutive nights hotel </li>
+              <li>Tokyo's One Piece Tower LIVE & PARK PASS (LIVE time - Japan time: 14:00)</li>
+              <li>Free Japan-wide ticket package, including free pocket wifi rental service, unlimited data for the whole process (one for each order) </li>
+             </ul>
+            </td>
+
+    <td>Osaka, Japan <img src="img/Japan.jpg" width="30" height="20"></td>
+	<td>3 day tour<br></td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>3085</span></b><i/></td>
+  </tr>
+  <tr>
+  <td><img src="img/pa23.jpg" width="400" height="250"></td>
+    <td>One-way Kansai Airport bus ticket │ bag pocket wifi rental service │ Osaka free travel package</br>content:<ul> 
+              <li>Hong Kong to Tokyo round-trip ticket (economical seat) [Narita Airport] or [Haneda Airport]  </li>
+              <li> 2 consecutive nights hotel  </li>
+              <li>One-way Kansai Airport to Osaka or Osaka to Kansai Airport Limousin Limousine Bus ticket</li>
+              <li>Free Japan-wide ticket package, including free pocket wifi rental service, unlimited data for the whole process (one for each order) </li>
+          </ul>
+    </td>
+
+    <td>Osaka, Japan <img src="img/japan.jpg" width="30" height="20"></td>
+	<td>7 day tour<br>Date: 10/8/2018 - 17/8/2018</td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>2655</span></b><i/></td>
+  </tr>
+  <tr>
+  <td><img src="img/pa24.jpg" width="400" height="250"></td>
+    <td>Osaka berber hot spring world │ package free full pocket wifi rental service │ Osaka free travel package</br>content:<ul> 
+              <li>Round trip ticket from Hong Kong to Osaka (economic class)  </li>
+              <li>2 consecutive nights hotel </li>
+              <li>Osaka Mooring Hot Springs World</li>
+              <li>Free Japan-wide ticket package, including free pocket wifi rental service, unlimited data for the whole process (one for each order) </li>
+          </ul>
+    </td>
+
+    <td>Osaka, Japan <img src="img/Japan.jpg" width="30" height="20"></td>
+	<td>4 day tour<br>Date: 20/9/2018 - 24/9/2018</td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>2668</span></b><i/></td>
+  </tr>
+</table>
+</div>
+
+
+<div id="T4">
+<table id="myTable">
+  <tr class="header">
+    <th>Gallery</th>
+    <th style="width:40%;">Packge</th>
+    <th >Country</th>
+	<th>Day</th>
+	<th>Price</th>
+  </tr>
+  <tr>
+    <td><img src="img/pa31.jpg" width="400" height="250"></td>
+	<td>Taipei MasterCard Travel Package │ Taoyuan Ticket MRT One-way Ticket │ Each Room Package Pocket Wifi Rental Service │ Taipei Free Travel Package</br>content:</br> 
+            <ul> 
+              <li>Hong Kong-Taipei round-trip ticket (economical seat) </li>
+              <li>2 nights hotel accommodation with breakfast</li>
+              <li>One pocket wifi per room for guest use (return at the hotel)</li>
+              <li>Taoyuan Airport MRT - One-way ticket </li>
+          </ul>
+    </td>
+    <td>Taipei, Taiwan <img src="img/taiwan.jpeg" width="30" height="20"></td>
+	<td>6 day tour<br>Date: 1/7/2018 - 6/7/2018</td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>1393</span></b><i/></td>
+  </tr>
+  <tr>
+    <td><img src="img/pa32.jpg" width="400" height="250"></td>
+	<td>Yehliu Park, Jiufen, Pingxi Day Tour</br>content:</br> 
+            <ul> 
+              <li>Hong Kong-Taipei round-trip ticket (economical seat)  </li>
+              <li>2 nights hotel accommodation </li>
+              <li>"Northeast Corner Natural Culture Experience Journey" (includes Seat-in-Coach fares, tickets, guides, sky lanterns (one for four people), and Marathon or pineapple cake DIY experience material costs, insurance)</li>
+             
+             </ul>
+            </td>
+
+    <td>Taipei, Taiwan <img src="img/taiwan.jpeg" width="30" height="20"></td>
+	<td>3 day tour<br></td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>1344</span></b><i/></td>
+  </tr>
+  <tr>
+  <td><img src="img/pa33.jpg" width="400" height="250"></td>
+    <td>Dabangen Forest Hot Spring Hotel │ Package 40 minutes back loose tendon pressure treatment course │Taipei free travel package</br>content:<ul> 
+              <li>Hong Kong to Tokyo round-trip ticket (economical seat) [Narita Airport] or [Haneda Airport]  </li>
+              <li> 1 night Taipei hotel stay plus 1 night Dagengan Forest Hot Spring Hotel hotel accommodation</li>
+              <li>One-on-one viewing ceremony and admission to the park for a ticket (per person)</li>
+              <li>Hua Zhi Zhi SPA treatment 40 minutes </li>
+          </ul>
+    </td>
+
+    <td>Taipei, Taiwan <img src="img/taiwan.jpeg" width="30" height="20"></td>
+	<td>7 day tour<br>Date: 10/8/2018 - 17/8/2018</td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>2017</span></b><i/></td>
+  </tr>
+  <tr>
+  <td><img src="img/pa34.jpg" width="400" height="250"></td>
+    <td>Miao Li Dayu Mountain Firefly Evening Tour</br>content:<ul> 
+              <li>Hong Kong-Taipei round-trip ticket (economical seat) </li>
+              <li>2 nights hotel accommodation </li>
+              <li>“One-Day Tour of Miaoli Dawo Mountain Firefly Evening Gala” (includes high-speed rail, Seat-in-Coach fares, tickets, guides, lunch and lunch, local specialties (dinner), insurance)</li>
+          </ul>
+    </td>
+
+    <td>Taipei, Taiwan <img src="img/taiwan.jpeg" width="30" height="20"></td>
+	<td>4 day tour<br>Date: 20/9/2018 - 24/9/2018</td>
+	<td><span style="font-size:12;">HKD</span><i><b><span style="font-size:20;color:#cc0066;"><br>1884</span></b><i/></td>
+  </tr>
+</table>
+</div>
+
+
+</body>
+</html>
