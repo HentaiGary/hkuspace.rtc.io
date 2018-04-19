@@ -5,6 +5,28 @@ body{
 	
 }
 
+.floating {  
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+	background-color: #004d66;
+	color: white;
+	border: 6px solid #f9ae22;
+    padding: 10px;
+    border-radius: 25px;
+	font-size:15px;
+}
+
+@keyframes floating {
+    from { transform: translate(0,  -10px); }
+    65%  { transform: translate(0, 15px); }
+    to   { transform: translate(0, -10px); }    
+}
+
+
 footer{
 	background-color:#33ccff;
 	color:white;
@@ -15,7 +37,7 @@ footer{
 }
 
 .button1 {
-    background-color: #f44336; /* Green */
+    background-color: #f44336; 
     border: none;
     color: white;
     padding: 15px 32px;
@@ -27,7 +49,7 @@ footer{
 }
 
 .button2 {
-    background-color: #008CBA; /* Green */
+    background-color: #008CBA; 
     border: none;
     color: white;
     padding: 15px 32px;
