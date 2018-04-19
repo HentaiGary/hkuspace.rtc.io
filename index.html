@@ -8,6 +8,9 @@
 var slideIndex = 0;
 showSlides();
 
+
+
+
 function update() {
     var x = document.lastModified;
     document.getElementById("demo").innerHTML = (x+' <img src="img/update.png" width="20" height="20"> ');
@@ -31,14 +34,14 @@ function showSlides() {
 }
 </script>
 </head>
-<body onload="showSlides();update();" >
+<body onload="showSlides();update();floating()" >
 
 <div>
+<img src="img/banner3.jpg" width=100% height="200">
+
 <div class="inline-block">
-<span style="text-align:center;"><img  src="img/banner3.jpg" width="92%" height="200"></span>
-<span style="float:right;font-size:11px"><img src="img/phoneicon.png" width="20" height="20">Contact Us:</br>Tel:9876 5432</br>Email:<a href="mailto:rtcoffical@gmail.com" style="color:#00ace6" target="_top">Click here</a></br><img src="img/cs.jpg" width="135" height="110"></br>
-<img src="img/infoicon.png" width="20" height="20"><a href="" style="color: #00ace6">Travel Guide</a></br></span>
-</div><ul>
+</div>
+<ul>
   <li><a class="highlight" href="index.html">Home</a></li>
   <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">Tours</a>
@@ -89,6 +92,9 @@ function showSlides() {
 </div>
 <br>
 
+</div>
+
+
 <div style="text-align:center">
   <span class="dot"></span> 
   <span class="dot"></span> 
@@ -101,11 +107,14 @@ function showSlides() {
 </td>
 
 <td width="1200" style="font-size:14px;"><div style="color:#484848">
-<span style="color:#2c2c2c;font-size:20px;"><b><h5><img src="img/websiteicon.png" width="50" height="50"><br>Website Infomation</h5>Suggested tools:</b></span>
+<div class="floating" style=" width: 210px;background-image:url("img/floating.jpg");">
+<span style="color:white;font-size:18px;"><b>Contact Us:</b></span></br>Tel:9876 5432<img src="img/phoneicon.png" width="20" height="20"></br>Email: <a href="mailto:rtcoffical@gmail.com" style="color:#f9ae22" target="_top"><b><i>Click here</i></b></a></br><img src="img/cs.jpg" width="135" height="110">
+<br><span style="color:white;font-size:18px;"><b><br>Recommended:<br></b></span>
 <br><b>Chrome 65.0</b> <img src="img/chrome.png" width="20" height="20"><br>
-<b>Window 7/8/10 <img src="img/window.jpg" width="20" height="20"></b><br>
-<br><span style="color:#2c2c2c;font-size:20px;"><b>Last Update at:</b></span>
+<b>Window 7/8/10 <img src="img/window.png" width="20" height="20"></b><br>
+<br><span style="color:white;font-size:18px;"><b>Last Update at:</b></span>
 <p id="demo"></p>
+</div>
 
 </div></td></tr>
 <tr>
