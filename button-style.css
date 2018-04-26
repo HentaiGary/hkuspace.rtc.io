@@ -1,11 +1,8 @@
-body{
-	background-color:4593e3;
-}
 .btn {
 	border: none;
 	font-family: inherit;
 	font-size: inherit;
-	color: inherit;
+	color: #4593e3;
 	background: none;
 	cursor: pointer;
 	padding: 25px 80px;
@@ -35,6 +32,6 @@ body{
 /* Button 1a */
 .btn-1a:hover,
 .btn-1a:active {
-	color: #0e83cd;
+	color: white;
 	background: #fff;
 }
