@@ -32,6 +32,6 @@
 /* Button 1a */
 .btn-1a:hover,
 .btn-1a:active {
-	color: white;
-	background: #fff;
+	color: black;
+	background: #000000;
 }
