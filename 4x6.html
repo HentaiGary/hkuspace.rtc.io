@@ -1,7 +1,7 @@
 <HTML>
 	<HEAD>
 		<TITLE>Memory Game</TITLE>
-		<link rel="stylesheet" type="text/css" href="game.css">
+		<link rel="stylesheet" type="text/css" href="button-style.css">
 	</HEAD>
 	<SCRIPT LANGUAGE="JavaScript">
 		var map=new Array(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8,9,9,10,10,11,11,12,12);
@@ -119,9 +119,9 @@
 		</TABLE>
 		<BR>
 		<form name="f"> 
-			<input type="button" value="4*4" onClick="window.location='4x4.html';">
-			<input type="button" value="4*6" onClick="window.location='4x6.html';">
-			<input type="button" value="4*8" onClick="window.location='4x8.html';">
+				<input type="button" class="btn btn-1 btn-1a" value="4*4" onClick="window.location='4x4.html';">
+				<input type="button" class="btn btn-1 btn-1a" value="4*6" onClick="window.location='4x6.html';">
+				<input type="button" class="btn btn-1 btn-1a" value="4*8" onClick="window.location='4x8.html';">
 			<br/>	
 			<br/>	
 			<table class="gameboard">
@@ -141,8 +141,8 @@
 				</script>
 			</table>
 			<br/>
-			<input type="button" value="Start" name="b" onClick="init();">
-			<input type="button" value="Show answer" name="bb" onClick="display();">
+				<input type="button" class="btn btn-1 btn-1a" value="Start" name="b" onClick="init();">
+				<input type="button" class="btn btn-1 btn-1a" value="Show answer" name="bb" onClick="display();">
 		</form>
 	</CENTER>
 </BODY>
